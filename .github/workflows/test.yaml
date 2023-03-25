@@ -11,8 +11,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
           - kubelogin
         baseImage:
           - debian:latest
@@ -33,8 +31,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - color
-          - hello
           - kubelogin
     steps:
       - uses: actions/checkout@v3
