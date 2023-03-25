@@ -1,0 +1,17 @@
+{
+    "id": "kubelogin",
+    "name": "kubelogin",
+    "version": "1.0.0",
+    "description": "Installs latest version of kubelogin, or an earlier version if specified.  Only works on Debian/Ubuntu.",
+    "documentationURL": "https://github.com/agilepathway/features/tree/main/src/kubelogin",
+    "options": {
+      "version": {
+        "type": "string",
+        "proposals": [
+          "latest"
+        ],
+        "default": "latest",
+        "description": "Select or enter a version."
+      }
+    }
+  }

@@ -13,6 +13,7 @@ jobs:
         features:
           - color
           - hello
+          - kubelogin
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -34,6 +35,7 @@ jobs:
         features:
           - color
           - hello
+          - kubelogin
     steps:
       - uses: actions/checkout@v3
 
