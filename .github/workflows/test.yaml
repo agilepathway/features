@@ -13,6 +13,7 @@ jobs:
       matrix:
         features:
           - kubelogin
+          - prism
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -33,6 +34,7 @@ jobs:
       matrix:
         features:
           - kubelogin
+          - prism
     steps:
       - uses: actions/checkout@v3
 
