@@ -1,0 +1,17 @@
+{
+    "id": "prism",
+    "name": "prism",
+    "version": "1.0.0",
+    "description": "Installs latest version of prism (https://stoplight.io/open-source/prism), or an earlier version if specified.  Only works on Debian/Ubuntu.",
+    "documentationURL": "https://github.com/agilepathway/features/tree/main/src/prism",
+    "options": {
+      "version": {
+        "type": "string",
+        "proposals": [
+          "latest"
+        ],
+        "default": "latest",
+        "description": "Select or enter a version."
+      }
+    }
+  }
