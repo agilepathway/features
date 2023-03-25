@@ -10,6 +10,7 @@ on:  # yamllint disable-line rule:truthy
   push:
 
 jobs:
+
   shellcheck:
     name: runner / shellcheck
     runs-on: ubuntu-latest
@@ -23,3 +24,14 @@ jobs:
           path: "."
           pattern: "*.sh"
           exclude: "./.git/*"
+
+  yamllint:
+    name: runner / yamllint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: yamllint
+        uses: reviewdog/action-yamllint@v1
+        with:
+          github_token: ${{ secrets.github_token }}
+          reporter: github-check
