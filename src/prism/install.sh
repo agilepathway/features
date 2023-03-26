@@ -14,8 +14,8 @@ rm -rf /var/lib/apt/lists/*
 
 architecture="$(uname -m)"
 case ${architecture} in
-"Darwin x86_64" | "Darwin arm64") architecture="macos" ;;
-x86_64 | aarch64) architecture="linux" ;;
+x86_64) architecture="x64";;
+aarch64 | armv8*) architecture="arm64";;
 *)
 	echo "(!) Architecture ${architecture} unsupported"
 	exit 1
@@ -33,27 +33,60 @@ check_packages() {
 	fi
 }
 
-# make sure we have curl
-check_packages ca-certificates curl
+install_via_npm() {
+	PACKAGE=$1
+	VERSION=$2
 
-github_repo_uri=https://github.com/stoplightio/prism
-if [ "${PRISM_VERSION}" == "latest" ]; then
-	prism_uri="$github_repo_uri/releases/latest/download/prism-cli-${architecture}"
+	# install node+npm if does not exists
+	if ! type npm >/dev/null 2>&1; then
+		echo "Installing node and npm..."
+		check_packages curl ca-certificates
+		curl -fsSL https://raw.githubusercontent.com/devcontainers/features/main/src/node/install.sh | VERSION="lts" bash
+		export NVM_DIR=/usr/local/share/nvm
+		[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+		[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
+	fi
+
+	if [ "$(npm list --global --parseable --depth 0 --omit dev | grep "$PACKAGE")" != "" ]; then
+		echo "$PACKAGE  already exists - skipping installation"
+		exit 0
+	fi
+
+	if [ "$VERSION" = "latest" ]; then
+		npm_installation="$PACKAGE"
+	else
+		npm_installation="${PACKAGE}@${VERSION}"
+	fi
+
+	npm install -g --omit=dev "$npm_installation"
+}
+
+if [ $architecture == "arm64" ]; then
+    # there is currently no Prism arm64 binary (see https://github.com/stoplightio/prism/issues/2055),
+	# so fallback is to install via npm
+	install_via_npm "@stoplight/prism-cli" "$PRISM_VERSION"
 else
-	prism_uri="$github_repo_uri/releases/download/v${PRISM_VERSION}/prism-cli-${architecture}"
+	check_packages ca-certificates curl
+
+	github_repo_uri=https://github.com/stoplightio/prism
+	if [ "${PRISM_VERSION}" == "latest" ]; then
+		prism_uri="$github_repo_uri/releases/latest/download/prism-cli-linux"
+	else
+		prism_uri="$github_repo_uri/releases/download/v${PRISM_VERSION}/prism-cli-linux"
+	fi
+
+	prism_install_dir="/usr/local/lib/prism"
+	exe="$prism_install_dir/prism"
+
+	if [ ! -d "$prism_install_dir" ]; then
+		mkdir -p "$prism_install_dir"
+	fi
+
+	curl --fail --location --progress-bar --output "$exe" "$prism_uri"
+	chmod +x "$exe"
+
+	ln -s "$exe" /usr/local/bin/prism
 fi
-
-prism_install_dir="/usr/local/lib/prism"
-exe="$prism_install_dir/prism"
-
-if [ ! -d "$prism_install_dir" ]; then
-	mkdir -p "$prism_install_dir"
-fi
-
-curl --fail --location --progress-bar --output "$exe" "$prism_uri"
-chmod +x "$exe"
-
-ln -s "$exe" /usr/local/bin/prism
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
