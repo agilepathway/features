@@ -6,5 +6,19 @@
                 "version": "4.10.6"
             }
         }
+    },
+    "specific_version_with_node_already_installed": {
+        "image": "mcr.microsoft.com/devcontainers/javascript-node",
+        "features": {
+            "prism": {
+                "version": "4.10.6"
+            }
+        }
+    },
+    "latest_version_with_node_already_installed": {
+        "image": "mcr.microsoft.com/devcontainers/javascript-node",
+        "features": {
+            "prism": {}
+        }
     }
 }
