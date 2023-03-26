@@ -1,7 +1,7 @@
 
 # prism (prism)
 
-Installs latest version of prism (https://stoplight.io/open-source/prism), or an earlier version if specified.  Only works on Debian/Ubuntu.
+Installs [Prism](https://stoplight.io/open-source/prism)
 
 ## Example Usage
 
@@ -16,6 +16,15 @@ Installs latest version of prism (https://stoplight.io/open-source/prism), or an
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select or enter a version. | string | latest |
+
+## OS Support
+
+This Feature should work on recent `x86_64`/`amd64` or `aarch64`/`arm64` versions of Debian/Ubuntu-based distributions with the `apt` package manager installed.
+
+If `aarch64`/`arm64` then the Feature will install node and npm if they are not already on the devcontainer (as they are needed
+for `aarch64`/`arm64` Prism installs).
+
+`bash` is required to execute the `install.sh` script.
 
 
 
