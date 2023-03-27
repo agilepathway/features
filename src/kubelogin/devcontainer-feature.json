@@ -1,8 +1,8 @@
 {
     "id": "kubelogin",
     "name": "kubelogin",
-    "version": "1.0.0",
-    "description": "Installs latest version of kubelogin, or an earlier version if specified.  Only works on Debian/Ubuntu.",
+    "version": "1.0.1",
+    "description": "Installs [kubelogin](https://github.com/Azure/kubelogin), providing azure authentication features that are not available in kubectl",
     "documentationURL": "https://github.com/agilepathway/features/tree/main/src/kubelogin",
     "options": {
       "version": {
