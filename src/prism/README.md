@@ -1,7 +1,7 @@
 
 # prism (prism)
 
-Installs [Prism](https://stoplight.io/open-source/prism)
+Installs [Prism](https://stoplight.io/open-source/prism), an HTTP mock and proxy server powered by OpenAPI specs
 
 ## Example Usage
 
