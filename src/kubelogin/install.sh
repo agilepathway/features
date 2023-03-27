@@ -14,10 +14,8 @@ rm -rf /var/lib/apt/lists/*
 
 architecture="$(uname -m)"
 case ${architecture} in
-"Darwin x86_64") architecture="darwin-amd64" ;;
-"Darwin arm64") architecture="darwin-arm64" ;;
-x86_64) architecture="linux-amd64" ;;
-aarch64) architecture="linux-arm64" ;;
+x86_64) architecture="linux-amd64";;
+aarch64 | armv8*) architecture="linux-arm64";;
 *)
 	echo "(!) Architecture ${architecture} unsupported"
 	exit 1

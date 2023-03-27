@@ -1,7 +1,7 @@
 {
     "id": "kubelogin",
     "name": "kubelogin",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "description": "Installs [kubelogin](https://github.com/Azure/kubelogin), providing azure authentication features that are not available in kubectl",
     "documentationURL": "https://github.com/agilepathway/features/tree/main/src/kubelogin",
     "options": {
