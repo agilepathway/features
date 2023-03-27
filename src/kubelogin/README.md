@@ -1,7 +1,7 @@
 
 # kubelogin (kubelogin)
 
-Installs latest version of kubelogin, or an earlier version if specified.  Only works on Debian/Ubuntu.
+Installs [kubelogin](https://github.com/Azure/kubelogin), providing azure authentication features that are not available in kubectl
 
 ## Example Usage
 
@@ -16,6 +16,12 @@ Installs latest version of kubelogin, or an earlier version if specified.  Only 
 | Options Id | Description | Type | Default Value |
 |-----|-----|-----|-----|
 | version | Select or enter a version. | string | latest |
+
+## OS Support
+
+This Feature should work on recent `x86_64`/`amd64` or `aarch64`/`arm64` versions of Debian/Ubuntu-based distributions with the `apt` package manager installed.
+
+`bash` is required to execute the `install.sh` script.
 
 
 
