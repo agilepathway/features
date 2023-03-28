@@ -1,0 +1,10 @@
+{
+    "specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "version": "1.4.2"
+            }
+        }
+    }
+}

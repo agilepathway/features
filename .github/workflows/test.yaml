@@ -14,6 +14,7 @@ jobs:
         features:
           - kubelogin
           - prism
+          - gauge
         baseImage:
           - debian:latest
           - ubuntu:latest
@@ -35,6 +36,7 @@ jobs:
         features:
           - kubelogin
           - prism
+          - gauge
     steps:
       - uses: actions/checkout@v3
 
