@@ -12,6 +12,19 @@
         ],
         "default": "latest",
         "description": "Select or enter a version."
+      },
+      "language": {
+        "type": "string",
+        "enum": [
+          "none",
+          "csharp",
+          "java",
+          "js",
+          "python",
+          "ruby"
+        ],
+        "default": "none",
+        "description": "Select a language plugin to install."
       }
     }
   }
