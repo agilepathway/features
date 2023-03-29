@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 GAUGE_VERSION="${VERSION:-"latest"}"
+LANGUAGE="${LANGUAGE:-"none"}"
 
 set -e
 
@@ -61,6 +62,11 @@ chmod +x "$exe"
 rm $zip
 
 ln -s "$exe" /usr/local/bin/gauge
+
+
+if [ "${LANGUAGE}" != "none" ]; then
+	su "${_REMOTE_USER}" -c "gauge install $LANGUAGE"
+fi
 
 # Clean up
 rm -rf /var/lib/apt/lists/*
