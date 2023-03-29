@@ -1,0 +1,30 @@
+{
+    "id": "gauge",
+    "name": "gauge",
+    "version": "1.0.0",
+    "description": "Installs [Gauge](https://gauge.org), a test automation framework that takes the pain out of acceptance testing",
+    "documentationURL": "https://github.com/agilepathway/features/tree/main/src/gauge",
+    "options": {
+      "version": {
+        "type": "string",
+        "proposals": [
+          "latest"
+        ],
+        "default": "latest",
+        "description": "Select or enter a version."
+      },
+      "language": {
+        "type": "string",
+        "enum": [
+          "none",
+          "csharp",
+          "java",
+          "js",
+          "python",
+          "ruby"
+        ],
+        "default": "none",
+        "description": "Select a language plugin to install."
+      }
+    }
+  }

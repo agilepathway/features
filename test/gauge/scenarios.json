@@ -1,0 +1,51 @@
+{
+    "specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "version": "1.4.2"
+            }
+        }
+    },
+    "csharp-latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "language": "csharp"
+            }
+        }
+    },
+    "java-latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "language": "java"
+            }
+        }
+    },
+    "js-latest": {
+        "image": "mcr.microsoft.com/devcontainers/javascript-node",
+        "features": {
+            "gauge": {
+                "language": "js"
+            }
+        }
+    },
+    "python-latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "language": "python"
+            }
+        }
+    },
+    "ruby-latest": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "language": "ruby"
+            }
+        }
+    }
+
+}
