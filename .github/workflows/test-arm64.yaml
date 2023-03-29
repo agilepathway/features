@@ -17,8 +17,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - kubelogin
-          - prism
           - gauge
         baseImage:
           - debian:latest
@@ -39,8 +37,6 @@ jobs:
     strategy:
       matrix:
         features:
-          - kubelogin
-          - prism
           - gauge
     steps:
       - uses: actions/checkout@v3
