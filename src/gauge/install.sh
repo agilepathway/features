@@ -2,6 +2,7 @@
 
 GAUGE_VERSION="${VERSION:-"latest"}"
 LANGUAGE="${LANGUAGE:-"none"}"
+LANGUAGE_VERSION="${LANGUAGEVERSION:-"latest"}"
 
 set -e
 
@@ -65,7 +66,11 @@ ln -s "$exe" /usr/local/bin/gauge
 
 
 if [ "${LANGUAGE}" != "none" ]; then
-	su "${_REMOTE_USER}" -c "gauge install $LANGUAGE"
+	gauge_command="gauge install $LANGUAGE"
+	if [ "${LANGUAGE_VERSION}" != "latest" ]; then
+		gauge_command+=" --version $LANGUAGE_VERSION"
+	fi
+	su "${_REMOTE_USER}" -c "$gauge_command"
 fi
 
 # Clean up

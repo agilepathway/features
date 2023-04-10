@@ -25,6 +25,14 @@
         ],
         "default": "none",
         "description": "Select a language plugin to install."
+      },
+      "languageVersion": {
+        "type": "string",
+        "proposals": [
+          "latest"
+        ],
+        "default": "latest",
+        "description": "Select or enter a specific version of the language plugin to install."
       }
     }
   }

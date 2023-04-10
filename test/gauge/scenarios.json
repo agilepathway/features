@@ -39,11 +39,29 @@
             }
         }
     },
+    "python_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "language": "python",
+                "languageVersion": "0.3.16"
+            }
+        }
+    },
     "ruby_latest": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "gauge": {
                 "language": "ruby"
+            }
+        }
+    },
+    "ruby_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "gauge": {
+                "language": "ruby",
+                "languageVersion": "0.5.3"
             }
         }
     }
