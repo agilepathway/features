@@ -7,7 +7,7 @@
             }
         }
     },
-    "csharp-latest": {
+    "csharp_latest": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "gauge": {
@@ -15,7 +15,7 @@
             }
         }
     },
-    "java-latest": {
+    "java_latest": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "gauge": {
@@ -23,7 +23,7 @@
             }
         }
     },
-    "js-latest": {
+    "js_latest": {
         "image": "mcr.microsoft.com/devcontainers/javascript-node",
         "features": {
             "gauge": {
@@ -31,7 +31,7 @@
             }
         }
     },
-    "python-latest": {
+    "python_latest": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "gauge": {
@@ -39,7 +39,7 @@
             }
         }
     },
-    "ruby-latest": {
+    "ruby_latest": {
         "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
         "features": {
             "gauge": {
